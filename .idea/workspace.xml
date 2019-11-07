@@ -90,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573093928518</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="removed gradle">
+      <created>1573094170106</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1573094170106</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,6 +113,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Jenkinsfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Jenkinsfile" />
+    <MESSAGE value="removed gradle" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed gradle" />
   </component>
 </project>
