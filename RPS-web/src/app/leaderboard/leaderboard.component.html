@@ -1,0 +1,185 @@
+<div class="leaderboard-container">
+
+<style type="text/css">
+  .tg  {border-collapse:collapse;border-spacing:0;}
+  .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+  .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+  .tg .tg-w3z3{font-weight:bold;font-size:15px;font-family:"Trebuchet MS", Helvetica, sans-serif !important;;text-align:left;vertical-align:top}
+  .tg .tg-wt0f{font-weight:bold;font-size:15px;font-family:"Trebuchet MS", Helvetica, sans-serif !important;;text-align:left;vertical-align:middle}
+  .WON {color: green}
+  .LOSS {color: red}
+  .TIE {color: lightblue}
+  .HOT {color: red;}
+  .MEDIUM {color: orange;}
+  .MILD {color: lightblue;}
+  .COLD {color: blue;}
+  </style>
+  
+  <ng-container *ngIf="selectedPlayer === -1">
+    <p>
+        LEADER BOARD
+    </p>
+    <table class="tg">
+      <tr>
+        <th class="tg-w3z3">Player</th>
+        <th class="tg-w3z3">Winning Percentage</th>
+        <th class="tg-w3z3">Number of Games</th>
+        <th class="tg-w3z3">Wins</th>
+        <th class="tg-w3z3">Losses</th>
+        <th class="tg-w3z3">Ties</th>
+        <th class="tg-w3z3">Rocks Thrown (%)</th>
+        <th class="tg-w3z3">Papers Thrown (%)</th>
+        <th class="tg-w3z3">Scissors Thrown (%)</th>
+        <th class="tg-w3z3">Lizard Thrown (%)</th>
+        <th class="tg-w3z3">Spock Thrown (%)</th>
+      </tr>
+      <ng-container >
+        <tr *ngFor="let playerStat of playerStats"  >
+          <td> <button (click)="showPlayer( playerStat.player.id )" > {{playerStat.player.name}} </button>   </td>
+          <td class="ps-winpercent-{{playerStat.player.id}}"> {{playerStat.winPercentage | number: '1.0-1'}}</td>
+          <td>{{playerStat.gamesPlayed}}</td>
+          <td>{{playerStat.gamesWon}}</td>
+          <td>{{playerStat.gamesLost}}</td>
+          <td>{{playerStat.gamesTied}}</td>
+
+          <!-- Coloring for Rock -->
+          <ng-container *ngIf = "playerStat.rockPercent >= '85'">
+            <td class = "HOT"> {{playerStat.rockPercent | number: '1.0-1'}} </td>
+          </ng-container>
+          <ng-container *ngIf = "playerStat.rockPercent >= '70' && playerStat.rockPercent < '85' ">
+              <td class = "MEDIUM"> {{playerStat.rockPercent | number: '1.0-1'}}</td>
+          </ng-container>
+          <ng-container *ngIf = "playerStat.rockPercent > '30' && playerStat.rockPercent < '70' ">
+            <td > {{playerStat.rockPercent | number: '1.0-1'}}</td>
+          </ng-container>
+          <ng-container *ngIf = "playerStat.rockPercent > '15' && playerStat.rockPercent <= '30' ">
+            <td class = "MILD"> {{playerStat.rockPercent | number: '1.0-1'}}</td>
+          </ng-container>
+          <ng-container *ngIf = "playerStat.rockPercent <= '15'">
+            <td class = "COLD"> {{playerStat.rockPercent | number: '1.0-1'}}</td>
+          </ng-container>
+          
+          <!-- Coloring Paper -->
+          <ng-container *ngIf = "playerStat.paperPercent >= '85'">
+              <td class = "HOT"> {{playerStat.paperPercent | number: '1.0-1'}} </td>
+            </ng-container>
+            <ng-container *ngIf = "playerStat.paperPercent >= '70' && playerStat.paperPercent < '85' ">
+                <td class = "MEDIUM"> {{playerStat.paperPercent | number: '1.0-1'}}</td>
+            </ng-container>
+            <ng-container *ngIf = "playerStat.paperPercent > '30' && playerStat.paperPercent < '70' ">
+              <td > {{playerStat.paperPercent | number: '1.0-1'}}</td>
+            </ng-container>
+            <ng-container *ngIf = "playerStat.paperPercent > '15' && playerStat.paperPercent <= '30' ">
+              <td class = "MILD"> {{playerStat.paperPercent | number: '1.0-1'}}</td>
+            </ng-container>
+            <ng-container *ngIf = "playerStat.paperPercent <= '15'">
+              <td class = "COLD"> {{playerStat.paperPercent | number: '1.0-1'}}</td>
+            </ng-container>
+
+            <!-- Coloring Scissors -->
+            <ng-container *ngIf = "playerStat.scissorsPercent >= '85'">
+                <td class = "HOT"> {{playerStat.scissorsPercent | number: '1.0-1'}} </td>
+            </ng-container>
+            <ng-container *ngIf = "playerStat.scissorsPercent >= '70' && playerStat.scissorsPercent < '85' ">
+                  <td class = "MEDIUM"> {{playerStat.scissorsPercent | number: '1.0-1'}}</td>
+            </ng-container>
+            <ng-container *ngIf = "playerStat.scissorsPercent > '30' && playerStat.scissorsPercent < '70' ">
+                <td > {{playerStat.scissorsPercent | number: '1.0-1'}}</td>
+            </ng-container>
+            <ng-container *ngIf = "playerStat.scissorsPercent > '15' && playerStat.scissorsPercent <= '30' ">
+                <td class = "MILD"> {{playerStat.scissorsPercent | number: '1.0-1'}}</td>
+            </ng-container>
+            <ng-container *ngIf = "playerStat.scissorsPercent <= '15'">
+                <td class = "COLD"> {{playerStat.scissorsPercent | number: '1.0-1'}}</td>
+            </ng-container>
+
+            <!-- Coloring Lizard -->
+            <ng-container *ngIf = "playerStat.lizardPercent >= '85'">
+                  <td class = "HOT"> {{playerStat.lizardPercent | number: '1.0-1'}} </td>
+            </ng-container>
+            <ng-container *ngIf = "playerStat.lizardPercent >= '70' && playerStat.lizardPercent < '85' ">
+                    <td class = "MEDIUM"> {{playerStat.lizardPercent | number: '1.0-1'}}</td>
+            </ng-container>
+            <ng-container *ngIf = "playerStat.lizardPercent > '30' && playerStat.lizardPercent < '70' ">
+                  <td > {{playerStat.lizardPercent | number: '1.0-1'}}</td>
+            </ng-container>
+            <ng-container *ngIf = "playerStat.lizardPercent > '15' && playerStat.lizardPercent <= '30' ">
+                  <td class = "MILD"> {{playerStat.lizardPercent | number: '1.0-1'}}</td>
+            </ng-container>
+            <ng-container *ngIf = "playerStat.lizardPercent <= '15'">
+                  <td class = "COLD"> {{playerStat.lizardPercent | number: '1.0-1'}}</td>
+            </ng-container>
+
+            <!-- Coloring Spock -->
+            <ng-container *ngIf = "playerStat.spockPercent >= '85'">
+                  <td class = "HOT"> {{playerStat.spockPercent | number: '1.0-1'}} </td>
+            </ng-container>
+            <ng-container *ngIf = "playerStat.spockPercent >= '70' && playerStat.spockPercent < '85' ">
+                    <td class = "MEDIUM"> {{playerStat.spockPercent | number: '1.0-1'}}</td>
+            </ng-container>
+            <ng-container *ngIf = "playerStat.spockPercent > '30' && playerStat.spockPercent < '70' ">
+                  <td > {{playerStat.spockPercent | number: '1.0-1'}}</td>
+            </ng-container>
+            <ng-container *ngIf = "playerStat.spockPercent > '15' && playerStat.spockPercent <= '30' ">
+                  <td class = "MILD"> {{playerStat.spockPercent | number: '1.0-1'}}</td>
+            </ng-container>
+            <ng-container *ngIf = "playerStat.spockPercent <= '15'">
+                  <td class = "COLD"> {{playerStat.spockPercent | number: '1.0-1'}}</td>
+            </ng-container>
+        </tr>
+      </ng-container>
+      
+    </table>
+    <button class="refresh" (click)="getPlayerStats()" >Refresh</button>
+</ng-container>
+
+<ng-container *ngIf="selectedPlayer != -1">
+  <table class="tg">
+    <tr>
+        <th class="tg-w3z3">Player's Name</th>
+        <th class="tg-w3z3">Winning Percentage</th>
+        <th class="tg-w3z3">Rock Percentage</th>
+        <th class="tg-w3z3">Paper Percentage</th>
+        <th class="tg-w3z3">Scissors Percentage</th>
+        <th class="tg-w3z3">Lizard Percentage</th>
+        <th class="tg-w3z3">Spock Percentage</th>
+    </tr>
+    <ng-container >
+        <tr *ngFor="let playerStat of playerStats">
+            <ng-container *ngIf="selectedPlayer == playerStat.player.id">
+                <td>{{playerStat.player.name}}</td>
+                <td>{{playerStat.winPercentage | number: '1.0-1'}}</td>
+                <td>{{playerStat.rockPercent | number: '1.0-1'}}</td>
+                <td>{{playerStat.paperPercent | number: '1.0-1'}}</td>
+                <td>{{playerStat.scissorsPercent | number: '1.0-1'}}</td>
+                <td>{{playerStat.lizardPercent | number: '1.0-1'}}</td>
+                <td>{{playerStat.spockPercent | number: '1.0-1'}}</td>
+            </ng-container>         
+        </tr>
+      </ng-container>
+  </table>
+   <br>
+  <table class="tg">
+    <tr>
+      <th class="tg-w3z3">Opponent</th>
+      <th class="tg-w3z3">Result</th>
+      <th class="tg-w3z3">Player Throw</th>
+      <th class="tg-w3z3">Opponent Throw</th>
+    </tr>
+    <ng-container >
+      <tr *ngFor="let gameRecord of gameRecords"  >
+          <td>{{gameRecord.opponent.name}}</td>
+          <td class = '{{gameRecord.result}}' >{{gameRecord.result}}</td>
+          <td>{{gameRecord.playerThrow}}</td>
+          <td>{{gameRecord.opponentThrow}}</td>
+      </tr>
+    </ng-container>
+    
+  </table>
+  
+  
+  <button (click)="showPlayer(-1)" >Back</button>
+</ng-container>
+</div>
+
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/RPS-3day.iml" filepath="$PROJECT_DIR$/RPS-3day.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RPS-core/RPS-core.iml" filepath="$PROJECT_DIR$/RPS-core/RPS-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RPS-persistence/RPS-persistence.iml" filepath="$PROJECT_DIR$/RPS-persistence/RPS-persistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RPS-rest/RPS-rest.iml" filepath="$PROJECT_DIR$/RPS-rest/RPS-rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RPS-web/RPS-web.iml" filepath="$PROJECT_DIR$/RPS-web/RPS-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RPS-rest/src/main/main.iml" filepath="$PROJECT_DIR$/RPS-rest/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RPS-persistence/src/main/main1.iml" filepath="$PROJECT_DIR$/RPS-persistence/src/main/main1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RPS-core/src/main/main2.iml" filepath="$PROJECT_DIR$/RPS-core/src/main/main2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RPS-persistence/src/test/test.iml" filepath="$PROJECT_DIR$/RPS-persistence/src/test/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RPS-rest/src/test/test1.iml" filepath="$PROJECT_DIR$/RPS-rest/src/test/test1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RPS-core/src/test/test2.iml" filepath="$PROJECT_DIR$/RPS-core/src/test/test2.iml" />
+    </modules>
+  </component>
+</project>
