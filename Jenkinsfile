@@ -21,7 +21,6 @@ pipeline {
       //    scannerHome = tool 'sonarscanner'
       //}
     tools {
-      gradle "gradle5.6"
       nodejs "nodejs12"
       maven "maven"
     }

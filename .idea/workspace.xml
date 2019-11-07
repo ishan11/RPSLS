@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c0ec311-0fd6-4288-bc5c-366576b3e932" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RPS-persistence/target/classes/db/migration/V1__init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/RPS-persistence/target/classes/db/migration/V1__init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RPS-persistence/target/classes/db/migration/V5__Update_Results_schema_date.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RPS-rest/src/main/java/com/rps/rest/GameResultsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/RPS-rest/src/main/java/com/rps/rest/GameResultsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RPS-rest/target/classes/com/rps/rest/GameResultsConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/RPS-rest/target/classes/com/rps/rest/GameResultsConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,6 +83,14 @@
       <option name="presentableId" value="Default" />
       <updated>1573090415230</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added Jenkinsfile">
+      <created>1573093928518</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1573093928518</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,5 +103,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added Jenkinsfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Jenkinsfile" />
   </component>
 </project>
